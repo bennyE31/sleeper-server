@@ -91,6 +91,10 @@ updateData();
 
 app.use(cors());
 
+app.get('/', (req, res) => {
+    res.send('<p>Hello!</p>')
+});
+
 app.get('/player/:name/stats', (req, res) => {
     const playerName = req.params.name;
     const playerId = getPlayerIdByName(playerName);
